@@ -48,11 +48,13 @@ const [loading, setLoading] = useState({
 
       const res = await response.json();
 
+      console.log("User data fetched 0:");
       if (res.message) handelSucess(res.message);
       // console.log(res.attemptedContests);
       setleetcodeProfile(res.leetcodeProfile);
       setattemptedContests(res.attemptedContests || []);
       setUserContestData(res.userContestData);
+      console.log("User data fetched 1:", data);
   
     } catch (error) {
       console.error("Error fetching user data:", error);
