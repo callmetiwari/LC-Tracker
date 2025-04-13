@@ -39,6 +39,7 @@ const [loading, setLoading] = useState({
 
   
   const fetchUserData = async () => {
+    console.log("fetch krne a gya");
     try {
       const response = await fetch("http://lc-tracker-vwrn.onrender.com/userdata", {
         method: "POST",
