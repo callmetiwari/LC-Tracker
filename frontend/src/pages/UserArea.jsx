@@ -1,4 +1,4 @@
-import { useParams, useLocation, href } from "react-router-dom";
+import { useParams, useLocation, href,Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { handelSucess } from "../error/utils";
 import Card from '@mui/material/Card';
@@ -125,34 +125,40 @@ const labels = solvedCounts.length > 0 ? solvedCounts.map((_, index) => `Day ${i
   return (
     <div className="User">
       <div className="nav"> 
-          <nav className="navbar sticky-top bg-body-tertiary">
-                <div className="NavLogo">
-                   <h1>CodeMate <img src={Logo} alt="Logo" className="NavLogoI" />
-                </h1>
-                </div>
-                <div className="NavCenters">
-                  <div  className="contestbtn">
-                  <b> <button onClick={handleClick}>Upcoming Contest</button></b>
-                  </div>  <a className="navbar-brand" href="/about"><b>About Us</b></a>
-                    <a className="navbar-brand" href="#"><b>Back To Top</b></a>
-                    <a className="navbar-brand" href="mailto:shashanktiwari3101@gmail.com"><b>Contact Us</b></a>
-                    <a className="navbar-brand" href="https://www.similarity.in/contests" target="_blank"rel="noopener noreferrer">
-                        <b>Recent Plag Reports</b>
-                  </a>
-              </div> 
-                <div className="LogOutBtns"> 
-                <Button
-                      type="button"
-                      className="btn btn-outline-danger"
-                      onClick={() => {
-                        localStorage.removeItem("username");
-                        navigate("/login");
-                      }}
-                    >
-               <b> Logout</b>  
-                </Button>
-                </div> 
-          </nav>
+      <nav className="navbar sticky-top bg-body-tertiary">
+  <div className="NavLogo">
+    <h1>CodeMate <img src={Logo} alt="Logo" className="NavLogoI" /></h1>
+  </div>
+  <div className="NavCenters">
+    <div className="contestbtn">
+      <b><button onClick={handleClick}>Upcoming Contest</button></b>
+    </div>
+    {/* Use Link instead of <a> */}
+    <Link className="navbar-brand" to="/about"><b>About Us</b></Link>
+    <Link className="navbar-brand" to="#"><b>Back To Top</b></Link>
+    <Link className="navbar-brand" to="mailto:shashanktiwari3101@gmail.com"><b>Contact Us</b></Link>
+    <Link
+      className="navbar-brand"
+      to="https://www.similarity.in/contests"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <b>Recent Plag Reports</b>
+    </Link>
+  </div>
+  <div className="LogOutBtns">
+    <Button
+      type="button"
+      className="btn btn-outline-danger"
+      onClick={() => {
+        localStorage.removeItem("username");
+        navigate("/login");
+      }}
+    >
+      <b>Logout</b>
+    </Button>
+  </div>
+</nav>
       </div>
 
    
