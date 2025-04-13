@@ -1,0 +1,71 @@
+@keyframes dropIn {
+    0% {
+      transform: translateY(-60px);
+      opacity: 0;
+    }
+    60% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* Outer wrapper: centers the form */
+  .otp-page {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* full screen height */
+    background-color: #000;
+    color: white;
+  }
+  
+  /* The OTP form box */
+  .otp-form {
+    width: 400px;
+    padding: 2rem;
+    background-color: #2c2f33;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  /* Input container */
+  .otp-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 1rem 0;
+  }
+  
+  /* OTP input box style */
+  .otp-input {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    color: black;
+    outline: none;
+    transition: border-color 0.3s ease;
+  
+    animation: dropIn 0.5s ease forwards;
+    opacity: 0;
+  }
+  .otp-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
