@@ -6,8 +6,9 @@ import UpComingContest from "./pages/UpComingContest";
 import AboutUs from "./About";
 import ChangePassword from "./pages/ChangePassword";
 import Verification from "./pages/Verification";
-import NewPassword from "./pages/newpassword";
+import NewPassword from './pages/NewPassword';
 import ProtectedRoute from "./pages/ProtectedRoute";
+
 
 function App() {
   return (
