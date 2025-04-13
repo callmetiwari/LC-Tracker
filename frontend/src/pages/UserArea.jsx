@@ -105,7 +105,7 @@ const [loading, setLoading] = useState({
 
 
   const handleClick = () => {
-    navigate("/contests"); 
+    
 };
 
 
@@ -131,7 +131,9 @@ const labels = solvedCounts.length > 0 ? solvedCounts.map((_, index) => `Day ${i
   </div>
   <div className="NavCenters">
     <div className="contestbtn">
-      <b><button onClick={handleClick}>Upcoming Contest</button></b>
+      <b><button onClick={()=>{
+ navigate("/contests"); 
+       }}>Upcoming Contest</button></b>
     </div>
     {/* Use Link instead of <a> */}
     <Link className="navbar-brand" to="/about"><b>About Us</b></Link>
