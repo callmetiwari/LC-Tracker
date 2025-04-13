@@ -62,7 +62,9 @@ app.get("/saveUser", async (req, res) => {
   console.log("sample saved");
   res.send("successfully tested");
 });
+const PORT = process.env.PORT || 8080;
 
-app.listen(8080, () => {
-  console.log(" Server running on port 8080");
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
+
