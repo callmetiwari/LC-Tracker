@@ -123,7 +123,7 @@ router.post("/usersignup", async (req, res) => {
 
 router.post("/userdata",async(req,res)=>{
     const {username}=req.body;
-    // console.log(`came till here ${username}`);
+    console.log(`came till here ${username}`);
     const query = {
         operationName: "userProfileAndContestData",
         variables: { username },
@@ -174,7 +174,7 @@ router.post("/userdata",async(req,res)=>{
       // console.log("📥 Response received from LeetCode");
   
       const leetcodeData = await leetcodeResponse.json();
-  
+      console.log("data fetched"); 
       const profile = leetcodeData.data.matchedUser;
       const contest = leetcodeData.data.userContestRanking;
       const contestHistory = leetcodeData.data.userContestRankingHistory;
@@ -196,7 +196,7 @@ router.post("/userdata",async(req,res)=>{
       if (!profile) {
         return res.status(400).json({ error: "LeetCode user not found" });
       }
-  
+     console.log("data send");
       return res.status(200).json({
         message: "Signup successful",
         user: { username },
@@ -206,6 +206,7 @@ router.post("/userdata",async(req,res)=>{
       });
   
 })
+
 
 
 
