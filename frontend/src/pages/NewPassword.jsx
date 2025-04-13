@@ -27,7 +27,7 @@ export default function NewPassword() {
     }
   
     try {
-      const url = "https://lc-tracker-vwrn.onrender.com/newpassword";
+      const url = "http://localhost:8080/newpassword";
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -36,11 +36,11 @@ export default function NewPassword() {
   
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || "Signup failed to change password");
+        throw new Error(errorData.error || "Failed to change password");
       }
        
       const res = await response.json();
-      handelSucess(`Signed Up As ${res.user.username}`);
+      handelSucess(`PassWord for ${res.user.username} Changed`);
       // console.log("password change ho gya h guys");
       setTimeout(() => {
         navigate("/login"); // 👈 Replace this with your desired route
