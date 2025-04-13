@@ -8,7 +8,7 @@ export default function UpComingContest() {
   const fetchAllContests = async () => {
     try {
       // Fetch LeetCode contests from backend
-      const response = await fetch("http://localhost:8080/contestdata", {
+      const response = await fetch("http://lc-tracker-vwrn.onrender.com/contestdata", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({}),

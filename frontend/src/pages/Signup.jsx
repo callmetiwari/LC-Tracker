@@ -22,7 +22,7 @@ export default function SignUp() {
     }
     //  console.log("came");;
     try {
-      const url = "http://localhost:8080/usersignup";
+      const url = "https://lc-tracker-vwrn.onrender.com/usersignup";
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

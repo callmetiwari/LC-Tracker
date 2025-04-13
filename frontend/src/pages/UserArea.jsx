@@ -40,7 +40,7 @@ const [loading, setLoading] = useState({
   
   const fetchUserData = async () => {
     try {
-      const response = await fetch("http://localhost:8080/userdata", {
+      const response = await fetch("http://lc-tracker-vwrn.onrender.com/userdata", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username }),
@@ -63,7 +63,7 @@ const [loading, setLoading] = useState({
     try {
       setLoading(prev => ({ ...prev, submissions: true }));
   
-      const res = await fetch("http://localhost:8080/leetcode-submissions", {
+      const res = await fetch("http://lc-tracker-vwrn.onrender.com/leetcode-submissions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username })

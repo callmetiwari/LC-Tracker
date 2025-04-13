@@ -27,7 +27,7 @@ export default function NewPassword() {
     }
   
     try {
-      const url = "http://localhost:8080/newpassword";
+      const url = "https://lc-tracker-vwrn.onrender.com/newpassword";
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -17,7 +17,7 @@ export default function ChangePassword() {
     }
     try {
 
-      const url = "http://localhost:8080/password-reset";
+      const url = "https://lc-tracker-vwrn.onrender.com/password-reset";
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
