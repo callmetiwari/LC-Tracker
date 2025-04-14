@@ -238,7 +238,7 @@ const labels = solvedCounts.length > 0 ? solvedCounts.map((_, index) => `Day ${i
           )}
       <div>
       <Box sx={{ textAlign: 'center', mt: 4 }}>
-        <Typography variant="h4">No of Questions Made Past Few Days</Typography>
+        <Typography variant="h4">No of Questions Solved Past Few Days</Typography>
       </Box>
       <div className="daily-solutions">
   {loading.submissions ? (
