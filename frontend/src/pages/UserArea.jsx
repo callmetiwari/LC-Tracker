@@ -41,7 +41,7 @@ const [loading, setLoading] = useState({
   const fetchUserData = async () => {
     console.log("fetch krne a gya");
     try {
-      const response = await fetch("http://lc-tracker-vwrn.onrender.com/userdata", {
+      const response = await fetch("https://lc-tracker-vwrn.onrender.com/userdata", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username }),
@@ -49,7 +49,6 @@ const [loading, setLoading] = useState({
 
       const res = await response.json();
 
-      console.log("User data fetched 0:");
       if (res.message) handelSucess(res.message);
       // console.log(res.attemptedContests);
       setleetcodeProfile(res.leetcodeProfile);
@@ -58,7 +57,7 @@ const [loading, setLoading] = useState({
       console.log("User data fetched 1:", data);
   
     } catch (error) {
-      console.error("Error fetching user data:", error);
+      // console.error("Error fetching user data:", error);
     }
   };
 
@@ -66,7 +65,7 @@ const [loading, setLoading] = useState({
     try {
       setLoading(prev => ({ ...prev, submissions: true }));
   
-      const res = await fetch("http://lc-tracker-vwrn.onrender.com/leetcode-submissions", {
+      const res = await fetch("https://lc-tracker-vwrn.onrender.com/leetcode-submissions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username })
